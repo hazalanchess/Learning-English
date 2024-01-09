@@ -1,0 +1,246 @@
+import random
+
+konular = {
+    "Hayvanlar": {
+        "cat": "kedi",
+        "dog": "köpek",
+        "elephant": "fil",
+        "lion": "aslan",
+        "tiger": "kaplan",
+        "monkey": "maymun",
+        "horse": "at",
+        "bird": "kuş",
+        "snake": "yılan",
+        "Sheep": "koyun",
+        "Hamster": "hamster",
+        "Turtle": "kaplumbağa",
+        "Fish": "balık",
+        "Budgerigar": "muhabbet kuşu",
+        "Lamb": "kuzu",
+        "Duck": "ördek",
+        "Goose": "kaz",
+        "Turkey": "hindi",
+        "Rabbit": "tavşan",
+        "Gorilla": "goril",
+        "Bear": "ayı",
+        "Deer": "geyik",
+        "Caribou": "ren geyiği",
+        "Camel": "deve",
+        "Rhino": "gergedan",
+        "Mouse": "fare",
+        "Cheetah": "çita",
+        "Shark": "köpek balığı",
+        "Hyena": "sırtlan",
+        "Wolf": "kurt",
+        "Fox": "tilki"
+    },
+     "Meyveler": {
+        "apple": "elma",
+        "pear": "armut",
+        "banana": "muz",
+        "grape": "üzüm",
+        "orange": "portakal",
+        "watermelon": "karpuz",
+        "melon": "kavun",
+        "coconut": "hindistan cevizi",
+        "kiwi": "kivi",
+        "strawberry": "çilek",
+        "pomegranate": "nar",
+        "plum": "erik",
+        "peanut": "fıstık",
+        "sour cherry": "vişne",
+        "tangerine": "mandalina",
+        "mulberry": "dut",
+        "medlar": "muşmula",
+        "quince": "ayva",
+        "walnut": "ceviz",
+        "hazelnut": "fındık",
+        "chestnut": "kestane",
+        "mango": "mango",
+        "grapefruit": "greyfurt",
+        "kumquat": "kumkat",
+        "apricot": "kayısı",
+        "peach": "şeftali",
+        "blackberry": "böğürtlen",
+        "blueberries": "yabanmersini",
+        "cranberry": "kızılcık",
+        "fig": "incir",
+        "lemon": "limon",
+        "lime": "misket limonu",
+        "cherry": "kiraz",
+        "goji berry": "kurt üzümü",
+        "avocado": "avokado",
+        "nectarine": "nektarin",
+        "black mulberry": "karadut",
+        "almond": "badem",
+        "asian persimmon": "cennet hurması",
+        "snake fruit": "yılan meyvesi",
+        "dragon fruit": "ejder meyvesi",
+        "elaeagnus latifolia": "iğde",
+        "loquat": "yenidünya",
+        "star fruit": "yıldız meyvesi",
+        "jack fruit": "jak meyvesi",
+        "passion fruit": "çarkıfelek meyvesi",
+        "horned melon": "boynuzlu kavun",
+        "sugar apple": "şeker elma",
+        "soursop": "tarçın elması"
+    },
+    "Renkler": {
+        "red": "kırmızı",
+        "blue": "mavi",
+        "yellow": "sarı",
+        "green": "yeşil",
+        "orange": "turuncu",
+        "purple": "mor",
+        "pink": "pembe",
+        "brown": "kahverengi",
+        "black": "siyah",
+        "white": "beyaz"
+    },
+    "Meslekler": {
+        "doctor": "doktor",
+        "teacher": "öğretmen",
+        "engineer": "mühendis",
+        "pilot": "pilot",
+        "nurse": "hemşire",
+        "artist": "sanatçı",
+        "chef": "şef",
+        "firefighter": "itfaiyeci",
+        "police officer": "polis memuru",
+        "lawyer": "avukat",
+        "accountant": "muhasebeci",
+        "actuary": "katip",
+        "Administrator": "yönetici",
+        "Advertiser": "reklamcı",
+        "Analyst": "analizci",
+        "Architect": "mimar",
+        "Art Director": "sanat yönetmeni",
+        "Assistant": "asistan",
+        "Astronaut": "astronot",
+        "Baker": "fırıncı",
+        "Ballerina": "balerin",
+        "Banker": "bankacı",
+        "Barista": "kahve uzmanı",
+        "Beautician": "güzellik uzmanı",
+        "Businessman": "iş adamı",
+        "Butcher": "kasap",
+        "Captain": "kaptan",
+        "Carpenter": "marangoz",
+        "Cashier": "kasiyer",
+        "ch nasıl okunur": "ç diye",
+        "sh nasıl okunur": "ş diye",
+        "Chef/Cook": "aşçı",
+        "Cleaner": "temizlikçi",
+    },
+    "Ülkeler": {
+        "Turkey": "Türkiye",
+        "United States": "Amerika Birleşik Devletleri",
+        "France": "Fransa",
+        "Germany": "Almanya",
+        "Italy": "İtalya",
+        "Japan": "Japonya",
+        "China": "Çin",
+        "Brazil": "Brezilya",
+        "Canada": "Kanada",
+        "Australia": "Avustralya",
+        "Iraq": "Irak",
+        "Azerbaijan": "Azerbaycan",
+        "Tajikistan": "Tacikistan",
+        "India": "Hindistan",
+        "Uzbekistan": "Özbekistan",
+        "Nepal": "Nepal",
+        "Thailand": "Tayland",
+        "Sri Lanka": "Sri Lanka",
+        "Mexico": "Meksika",
+        "Chile": "Şili",
+        "Bolivia": "Bolivya",
+        "Argentina": "Arjantin",
+        "Suriname": "Surinam",
+        "Ecuador": "Ekvador",
+        "Colombia": "Kolombiya",
+        "Algeria": "Cezayir",
+        "Burkina Faso": "Burkina Faso",
+        "Ethiopia": "Etiyopya",
+        "Djibouti": "Cibuti",
+        "Namibia": "Namibya",
+        "Ivory Coast": "Fildişi Sahili",
+        "Cape Verde Islands": "Yeşil Burun Adaları",
+        "Egypt": "Mısır",
+        "Morocco": "Fas",
+        "Central Africa Republic": "Orta Afrika Cumhuriyeti"
+    }
+}
+
+def learn_word(konu):
+    words = konular[konu]
+    kelime, anlam = random.choice(list(words.items()))
+
+    print(f"{kelime} kelimesinin Türkçe anlamını yazın:")
+    user_input = input("> ")
+
+    if user_input.lower() == anlam.lower():
+        print("Harikasın! Bir sonraki kelimeye geçebilirsin.")
+        return True
+    else:
+        print(f"Yanlış cevap! '{kelime}' kelimesinin Türkçe anlamı '{anlam}'")
+        print("Öğrenmek için tekrar deneyebilirsin.")
+        return False
+
+# Sohbeti başlat
+print("Merhaba! Adınız nedir?")
+user_name = input("> ")
+
+# Kullanıcı doğrulama
+valid_names = ["büşra", "büşra", "büsra", "busra"]
+if user_name.lower() in valid_names:
+    print(f"{user_name.capitalize()} kullanıcısı sisteme girdi.")
+else:
+    print("Geçersiz kullanıcı adı. Program sonlandırıldı.")
+    exit()
+
+# İngilizce çalışma programına devam et
+print("İngilizce eğitim programına hoş geldiniz!")
+
+doğru_sayısı = 0
+yanlış_sayısı = 0
+
+while True:
+    print("Aşağıdaki konulardan birini seçin (Çıkmak için 'q' tuşuna basın):")
+    konular_listesi = list(konular.keys())
+    for i, konu in enumerate(konular_listesi, start=1):
+        print(f"{i}. {konu}")
+
+    user_choice = input("> ")
+
+    if user_choice.lower() == "q":
+        print(f"Program sonlandırıldı. Toplam doğru: {doğru_sayısı}, Toplam yanlış: {yanlış_sayısı}")
+        break
+
+    try:
+        konu_index = int(user_choice) - 1
+        konu = konular_listesi[konu_index]
+        konu_değişti = True
+
+        while konu_değişti:
+            sonuç = learn_word(konu)
+
+            if sonuç:
+                doğru_sayısı += 1
+            else:
+                yanlış_sayısı += 1
+
+            print("Bir sonraki kelimeye geçmek için Enter tuşuna basın veya başka bir konu seçmek için 'q' tuşuna basın.")
+            user_input = input("> ")
+
+            if user_input.lower() == "q":
+                konu_değişti = False
+        
+    except (ValueError, IndexError):
+        print("Geçersiz seçim. Tekrar deneyin.")
+        
+    print("Programdan çıkmak için 'kapat' yazın:")
+    user_input = input("> ")
+    
+    if user_input.lower() == "kapat":
+        print(f"Program sonlandırıldı. Toplam doğru: {doğru_sayısı}, Toplam yanlış: {yanlış_sayısı}")
+        break
